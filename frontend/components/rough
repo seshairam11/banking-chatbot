@@ -1,0 +1,72 @@
+<View style={[bootstrap.modalBody, styles.p30, { marginTop: 30 }]}>
+                        <View style={[bootstrap.dFlex, bootstrap.flexRow]}>
+                            <Image source={require('../assets/img/profile.png')} style={{ width: 125, height: 160, borderRadius: 20, resizeMode: "contain" }} />
+                            <View style={{ paddingLeft: 20, marginTop: 20 }}>
+                                <Text style={[bootstrap.m0, bootstrap.h5, bootstrap.textWhite]}>
+                                    {appState.userName}
+                                </Text>
+                                <Text style={{ marginTop: 2, marginBottom: 20, color: "#7e8299" }}>
+                                    {appState.userType}
+                                </Text>
+                                <LocalButton
+                                    ctl_Attribute={ctlAttribute.current[1]}
+                                    handlePress={handlePress}
+                                />
+                            </View>
+                        </View>
+                        <View style={{ marginVertical: 15 }}></View>
+                        <TouchableOpacity style={[bootstrap.dFlex, bootstrap.flexRow]} onPress={() => handlePress("myprofile")}>
+                            <View style={[bootstrap.dFlex, bootstrap.alignItemsCenter, bootstrap.flexRow, styles.mb30]}>
+                                <View style={[styles.me15, bootstrap.bgPrimaryLight, bootstrap.w75, bootstrap.h75, bootstrap.lh60, bootstrap.textCenter, { borderRadius: 5 }]}>
+                                    <MaterialIcons name='person' size={60} style={{ padding: 7 }} color={"#0052cc"} />
+                                </View>
+                                <View style={[bootstrap.dFlex, bootstrap.fw500]}>
+                                    <Text style={[bootstrap.textDark, bootstrap.mb1, bootstrap.fs16, bootstrap.textWhite]}>
+                                        My Profile
+                                    </Text>
+                                    <Text style={bootstrap.textFade}>Account settings and more</Text>
+                                </View>
+                            </View>
+                        </TouchableOpacity>
+                        {appState.userType == "Fleet Owner" &&
+                            < TouchableOpacity style={[bootstrap.dFlex, bootstrap.flexRow]} onPress={() => handlePress("drivers")}>
+                                <View style={[bootstrap.dFlex, bootstrap.alignItemsCenter, bootstrap.flexRow, styles.mb30]}>
+                                    <View style={[styles.me15, bootstrap.bgDangerLight, bootstrap.w75, bootstrap.h75, bootstrap.lh60, bootstrap.textCenter, { borderRadius: 5 }]}>
+                                        <MaterialIcons name='add' size={50} style={{ padding: 12 }} color={"#ff562f"} />
+                                    </View>
+                                    <View style={[bootstrap.dFlex, bootstrap.fw500]}>
+                                        <Text style={[bootstrap.textDark, bootstrap.mb1, bootstrap.fs16, bootstrap.textWhite]}>
+                                            Drivers
+                                        </Text>
+                                        <Text style={bootstrap.textFade}>Assign a Driver to a Vehicle</Text>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>}
+                        <TouchableOpacity style={[bootstrap.dFlex, bootstrap.flexRow]} onPress={() => handlePress("settings")}>
+
+                            <View style={[bootstrap.dFlex, bootstrap.alignItemsCenter, bootstrap.flexRow, styles.mb30]}>
+                                <View style={[styles.me15, bootstrap.bgDangerLight, bootstrap.w75, bootstrap.h75, bootstrap.lh60, bootstrap.textCenter, { borderRadius: 5 }]}>
+                                    <MaterialIcons name='settings-suggest' size={50} style={{ padding: 12 }} color={"#ff562f"} />
+                                </View>
+                                <View style={[bootstrap.dFlex, bootstrap.fw500]}>
+                                    <Text style={[bootstrap.textDark, bootstrap.mb1, bootstrap.fs16, bootstrap.textWhite]}>
+                                        Settings
+                                    </Text>
+                                    <Text style={bootstrap.textFade}>Accout Settings</Text>
+                                </View>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[bootstrap.dFlex, bootstrap.flexRow]} onPress={() => handlePress("")}>
+                            <View style={[bootstrap.dFlex, bootstrap.alignItemsCenter, bootstrap.flexRow, styles.mb30]}>
+                                <View style={[styles.me15, bootstrap.bgSuccessLight, bootstrap.w75, bootstrap.h75, bootstrap.lh60, bootstrap.textCenter, { borderRadius: 5 }]}>
+                                    <MaterialIcons name='info' size={50} style={{ padding: 12 }} color={"#04a08b"} />
+                                </View>
+                                <View style={[bootstrap.dFlex, bootstrap.fw500]}>
+                                    <Text style={[bootstrap.textDark, bootstrap.mb1, bootstrap.fs16, bootstrap.textWhite]}>
+                                        About
+                                    </Text>
+                                    <Text style={bootstrap.textFade}>Traffic light detection</Text>
+                                </View>
+                            </View>
+                        </TouchableOpacity>
+                    </View>

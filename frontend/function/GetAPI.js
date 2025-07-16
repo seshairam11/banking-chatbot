@@ -4,7 +4,7 @@ const useFetch = () => {
     const [isLoadingApi, setisLoading] = useState(false);
     const [fetchError, setFetchError] = useState(null);
     const [apiKey, setApiKey] = useState(null);
-    const baseURI = "http://192.168.29.230:8000";
+    const baseURI = "https://banking-chatbot-wuwd.onrender.com";
 
 
 
@@ -29,8 +29,5 @@ const useFetch = () => {
 
     return { responseData, isLoadingApi, apiKey, fetchError, serverRequest };
 };
-
-
-
 
 export default useFetch;

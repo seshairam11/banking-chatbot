@@ -66,6 +66,24 @@ exports.updatePassageController = async (req, res, next) => {
     }
 }
 
+
+exports.testContoller = async (req, res, next) => {
+    const updatePassage = req;
+    try {
+
+
+        res.json({
+            isAuth: true,
+            errormsg: "Test controller executed successfully",
+        });
+    } catch (err) {
+        res.json({
+            isAuth: false,
+            errormsg: "Error in test controller",
+        });
+    }
+}
+
 exports.deletePassageController = async (req, res, next) => {
     const requestData = req.body;
     try {

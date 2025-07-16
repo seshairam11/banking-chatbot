@@ -66,23 +66,24 @@ exports.updatePassageController = async (req, res, next) => {
     }
 }
 
-
-exports.testContoller = async (req, res, next) => {
-    const updatePassage = req;
+exports.testController = async (req, res, next) => {
     try {
-
+        // If you want to access data from the request, use req.body / req.params / req.query
+        // Example:
+        // const data = req.body;
 
         res.json({
             isAuth: true,
             errormsg: "Test controller executed successfully",
         });
     } catch (err) {
-        res.json({
+        console.error("Test controller error:", err);
+        res.status(500).json({
             isAuth: false,
             errormsg: "Error in test controller",
         });
     }
-}
+};
 
 exports.deletePassageController = async (req, res, next) => {
     const requestData = req.body;

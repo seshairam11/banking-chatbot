@@ -68,17 +68,13 @@ exports.updatePassageController = async (req, res, next) => {
 
 exports.testController = async (req, res, next) => {
     try {
-        // If you want to access data from the request, use req.body / req.params / req.query
-        // Example:
-        // const data = req.body;
-
         res.json({
             isAuth: true,
             errormsg: "Test controller executed successfully",
         });
     } catch (err) {
         console.error("Test controller error:", err);
-        res.status(500).json({
+        res.json({
             isAuth: false,
             errormsg: "Error in test controller",
         });
